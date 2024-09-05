@@ -2,7 +2,7 @@ from flask import Flask
 from config import Config
 from models.db_init import db
 from flask_cors import CORS
-from routes.user_route import user_route_blueprint  # Use route blueprint
+from routes.user_route import user_route_blueprint  # Use user_route blueprint
 
 app = Flask(__name__)
 app.config.from_object(Config)

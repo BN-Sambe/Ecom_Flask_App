@@ -1,0 +1,40 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="needs-validation" novalidate>
+    
+    <!-- Username Field -->
+    <div class="mb-3">
+      <label for="username" class="form-label">Username:</label>
+      <input type="text" id="username" formControlName="username" class="form-control" placeholder="Enter your username">
+      <div *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid" class="invalid-feedback">
+        Username is required.
+      </div>
+    </div>
+    
+    <!-- Email Field -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter your email">
+      <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid" class="invalid-feedback">
+        Valid email is required.
+      </div>
+    </div>
+    
+    <!-- Password Field -->
+    <div class="mb-3">
+      <label for="password" class="form-label">Password:</label>
+      <input type="password" id="password" formControlName="password" class="form-control" placeholder="Enter your password">
+      <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid" class="invalid-feedback">
+        Password is required.
+      </div>
+    </div>
+    
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary w-100" [disabled]="registerForm.invalid">Register</button>
+  </form>
+
+  <!-- Message Display -->
+  <div *ngIf="message" [ngClass]="{'alert alert-danger mt-3': error, 'alert alert-success mt-3': !error}">
+    {{ message }}
+  </div>
+</div>

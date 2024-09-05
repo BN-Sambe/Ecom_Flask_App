@@ -1,0 +1,9 @@
+{
+    "python.analysis.extraPaths": [
+        "./Eccommerce/BackEnd",
+        "./Eccommerce/BackEnd",
+        "./Eccommerce/BackEnd",
+        "./Eccommerce/BackEnd",
+        "./Eccommerce/BackEnd"
+    ]
+}

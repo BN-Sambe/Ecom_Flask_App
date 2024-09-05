@@ -1,0 +1,32 @@
+<!-- login.component.html -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Login</h2>
+  <form (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+    
+    <!-- Username Field -->
+    <div class="mb-3">
+      <label for="username" class="form-label">Username:</label>
+      <input id="username" [(ngModel)]="username" name="username" required class="form-control" placeholder="Enter your username">
+      <div *ngIf="formSubmitted && !username" class="invalid-feedback">
+        Username is required.
+      </div>
+    </div>
+    
+    <!-- Password Field -->
+    <div class="mb-3">
+      <label for="password" class="form-label">Password:</label>
+      <input id="password" type="password" [(ngModel)]="password" name="password" required class="form-control" placeholder="Enter your password">
+      <div *ngIf="formSubmitted && !password" class="invalid-feedback">
+        Password is required.
+      </div>
+    </div>
+    
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary w-100">Login</button>
+  </form>
+
+  <!-- Message Display -->
+  <div *ngIf="message" [ngClass]="{'alert alert-danger mt-3': error, 'alert alert-success mt-3': !error}">
+    {{ message }}
+  </div>
+</div>
